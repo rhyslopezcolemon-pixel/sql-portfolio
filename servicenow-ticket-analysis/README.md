@@ -1,30 +1,73 @@
 # ServiceNow Ticket Analysis (2023)
 
-## Project Overview
-This project analyzes a synthetic ServiceNow-style incident dataset representing virtual support activity during calendar year 2023. The goal is to demonstrate practical SQL skills applied to real-world IT service management and operational reporting scenarios.
+## Overview
+This project analyzes a synthetic ServiceNow-style incident dataset representing
+virtual support activity during calendar year 2023. The purpose of the analysis is
+to demonstrate practical SQL skills applied to real-world IT service management and
+operational reporting scenarios.
 
-The dataset reflects a standard Monday–Friday support schedule and includes realistic incident volume, resolution patterns, user activity, and asset associations.
+The analysis focuses on establishing baseline workload metrics and evaluating overall
+resolution effectiveness before pursuing deeper segmentation or trend analysis.
+
+All data used in this project is fictional and created solely for portfolio
+demonstration purposes.
+
+---
 
 ## Business Context
-Incomplete contact information, inconsistent resolution rates, and uneven ticket volume can create operational bottlenecks in virtual support environments. This analysis focuses on understanding incident trends, resolution effectiveness, and patterns that could inform workflow improvements.
+In virtual support environments, understanding normal ticket volume and resolution
+performance is essential for effective staffing, backlog management, and process
+improvement. Without clear baselines, it becomes difficult to distinguish between
+normal variation and meaningful operational issues.
 
-## Data Description
-The project uses three related tables:
-- **Incidents**: Individual support tickets with contact date, resolution status, user identifier, and optional asset association
-- **Users**: Synthetic user identifiers representing repeat requesters
-- **Assets**: Synthetic asset identifiers representing managed devices or systems
+This analysis mirrors the type of exploratory reporting commonly performed by
+operations, reporting, and IT service management analysts to support internal
+decision-making.
 
-All data is fictional and created solely for portfolio demonstration purposes.
+---
 
-## Key Questions Explored
-- How many incidents are logged per day?
-- What percentage of incidents are resolved versus unresolved?
-- How do resolution rates change over time?
-- Are asset-associated incidents resolved more frequently?
-- Which users generate the most incidents?
+## Dataset Description
+The project uses three related tables modeled after a typical ServiceNow schema:
 
-## Tools Used
-- SQL (analysis and aggregation)
-- Excel (data generation and validation)
-- GitHub (version control and portfolio presentation)
+- **Incidents**  
+  Individual support tickets, including contact date, resolution status, user
+  identifier (NUID), and optional asset association.
 
+- **Users**  
+  Synthetic user identifiers representing repeat requesters across multiple incidents.
+
+- **Assets**  
+  Synthetic asset identifiers representing managed devices or systems linked to
+  incidents when applicable.
+
+The dataset reflects a standard Monday–Friday support schedule with realistic
+incident volume and resolution patterns.
+
+---
+
+## Key Questions Addressed
+This initial phase of analysis focuses on two foundational questions:
+
+1. **What does normal daily incident volume look like?**  
+   Establishes a baseline workload to contextualize future analysis.
+
+2. **What percentage of incidents are resolved versus unresolved overall?**  
+   Measures high-level operational effectiveness using a core ITSM KPI.
+
+These questions are intentionally scoped to demonstrate analytical sequencing and
+clarity rather than breadth.
+
+---
+
+## Tools & Approach
+- **SQL**: Data aggregation and KPI analysis  
+- **Hosted SQL Environment (data.world)**: Query execution and validation  
+- **GitHub**: Version control, documentation, and portfolio presentation  
+- **Excel**: Dataset generation and validation  
+
+Queries are written to prioritize clarity, portability, and alignment with
+real-world analytics workflows rather than platform-specific optimizations.
+
+---
+
+## Project Structure
