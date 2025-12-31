@@ -1,16 +1,16 @@
-/* 
-Question 1:
-How many incidents were logged per day?
-
-Purpose:
-Establish baseline daily workload and identify natural variation
-in virtual support ticket volume.
-*/
+-- Query: overall_incident_resolution_rate
+-- Purpose: Measure overall resolution effectiveness for 2023 incidents
 
 SELECT
-    contact_date,
-    COUNT(incident_number) AS daily_incident_count
-FROM incidents
-GROUP BY contact_date
-ORDER BY contact_date;
-
+  SUM(CASE WHEN resolved_status = 'R' THEN 1 ELSE 0 END) AS resolved_count,
+  SUM(CASE WHEN resolved_status = 'UR' THEN 1 ELSE 0 END) AS unresolved_count,
+  COUNT(*) AS total_incidents,
+  ROUND(
+    SUM(CASE WHEN resolved_status = 'R' THEN 1 ELSE 0 END) * 100.0 / COUNT(*),
+    2
+  ) AS resolved_pct,
+  ROUND(
+    SUM(CASE WHEN resolved_status = 'UR' THEN 1 ELSE 0 END) * 100.0 / COUNT(*),
+    2
+  ) AS unresolved_pct
+FROM incidents;
