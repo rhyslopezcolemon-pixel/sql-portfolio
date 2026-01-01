@@ -49,6 +49,8 @@ incident volume and resolution patterns.
 The diagram below illustrates the relationships between incidents, users, and assets
 in the ServiceNow-style dataset.
 
+![ServiceNow ERD](docs/servicenow_erd.png)
+
 
 ---
 
