@@ -44,6 +44,13 @@ The dataset reflects a standard Monday–Friday support schedule with realistic
 incident volume and resolution patterns.
 
 ---
+## Entity Relationship Diagram (ERD)
+
+The diagram below illustrates the relationships between incidents, users, and assets
+in the ServiceNow-style dataset.
+
+![ServiceNow ERD](docs/servicenow_erd.png)
+---
 
 ## Key Questions Addressed
 This initial phase of analysis focuses on two foundational questions:
